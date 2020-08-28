@@ -17,6 +17,7 @@ pipeline {
             steps {
             git credentialsId: 'jenkins', url: 'https://github.com/almadencloud/webapp'
             checkout scm
+            sh 'echo ok'
             maven clear
             maven package
             }
