@@ -2,7 +2,11 @@ pipeline {
     agent {
         label 'ip-172-31-36-119'
     }
-
+    
+    tools {
+        maven 'M3'
+    }
+    
     stages {
         stage('Hello') {
             steps {
@@ -13,6 +17,8 @@ pipeline {
             steps {
             git credentialsId: 'jenkins', url: 'https://github.com/almadencloud/webapp'
             checkout scm
+            maven clear
+            maven package
             }
         }
     }
