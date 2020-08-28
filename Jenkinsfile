@@ -18,7 +18,7 @@ pipeline {
             git credentialsId: 'jenkins', url: 'https://github.com/almadencloud/webapp'
             checkout scm
             sh 'echo ok'
-            sh 'mvn clear'
+            sh 'mvn clean'
             sh 'mvn package'
             }
         }
