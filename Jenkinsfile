@@ -20,6 +20,7 @@ pipeline {
             sh 'echo ok'
             sh 'mvn clear'
             sh 'mvn package'
+            sh 'echo done'
             }
         }
     }
